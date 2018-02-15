@@ -33,4 +33,27 @@ def gordos(directorio,size):
 		if os.path.getsize(directorio+"/"+fichero)> bytes:
 			print fichero+" "+ str(os.path.getsize(directorio+"/"+fichero))
 
+def visualizar(fichero):
+	if not os.access(fichero,0):
+		print 'Fichero no exxiste'
+		return False
+	f=open(fichero,'r')
+	while True:
+		linea= f.readline()
+		if not linea: break
+		print (linea[0:-1])
 
+
+
+
+
+
+
+def visualizar1(fichero):
+	if not os.access(fichero,0):
+		print 'Fichero no exxiste'
+		return False
+	f=open(fichero,'r')
+	lineas= f.readlines()
+	for linea in lineas:
+		print (linea[0:-1])
